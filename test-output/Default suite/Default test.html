@@ -1,0 +1,355 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>34/5/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Oct 27 17:42:23 CDT 2024</td>
+</tr>
+<tr><td>Total time:</td><td>207 seconds (207861 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login credentials with null Adminname # TC#21", "Verify login with bgd"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginWithBkgrd.error_message_admin_pwd(LoginWithBkgrd.java:48)
+	at ✽.Error message please check Adminname/password(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/LoginFrom21Step.feature:24)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2026062163", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2026062163'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginWithBkgrd.error_message_admin_pwd(LoginWithBkgrd.java:48)
+	at ✽.Error message please check Adminname/password(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/LoginFrom21Step.feature:24)
+</pre></div></td>
+<td>9</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login credentials with null password # TC#22", "Verify login with bgd"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginWithBkgrd.error_message_admin_pwd(LoginWithBkgrd.java:48)
+	at ✽.Error message please check Adminname/password(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/LoginFrom21Step.feature:30)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1550904740", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1550904740'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginWithBkgrd.error_message_admin_pwd(LoginWithBkgrd.java:48)
+	at ✽.Error message please check Adminname/password(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/LoginFrom21Step.feature:30)
+</pre></div></td>
+<td>9</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify logout function", "Validation on Logout button"</td>
+<td><div><pre>java.lang.AssertionError: Test failed, Expected exception error
+	at stepDefinition.LogoutStepDefination.admin_should_receive_error_message(LogoutStepDefination.java:63)
+	at ✽.Admin should receive error message(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Logout2.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1158388210", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1158388210'><pre>java.lang.AssertionError: Test failed, Expected exception error
+	at stepDefinition.LogoutStepDefination.admin_should_receive_error_message(LogoutStepDefination.java:63)
+	at ✽.Admin should receive error message(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Logout2.feature:8)
+</pre></div></td>
+<td>8</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify asterik next to Admin text # TC#11", "Verify given URL"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginStepDefination.admin_should_see_field_mandatory_asterik_symbol_next_to_admin_text(LoginStepDefination.java:121)
+	at ✽.Admin should see field mandatory asterik symbol next to Admin text(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Login.feature:72)
+</pre></div><a href='#' onClick='toggleBox("stack-trace791302244", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace791302244'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepDefinition.LoginStepDefination.admin_should_see_field_mandatory_asterik_symbol_next_to_admin_text(LoginStepDefination.java:121)
+	at ✽.Admin should see field mandatory asterik symbol next to Admin text(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Login.feature:72)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 1st home", "Verify DashBoard"</td>
+<td><div><pre>java.lang.AssertionError: expected [Home] but found [Program]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at stepDefinition.DashStepDefination.admin_should_see_home_in_the_1st_place(DashStepDefination.java:82)
+	at ✽.Admin should see Home in the 1st place(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Dashboard.feature:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1464984894", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1464984894'><pre>java.lang.AssertionError: expected [Home] but found [Program]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at stepDefinition.DashStepDefination.admin_should_see_home_in_the_1st_place(DashStepDefination.java:82)
+	at ✽.Admin should see Home in the 1st place(file:///C:/Users/bhara/eclipse-workspace/LMS/src/test/resources/featureFiles/Dashboard.feature:59)
+</pre></div></td>
+<td>6</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify logout function", "Validation on Logout button"</td>
+<td></td>
+<td>5</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 2nd program", "Verify DashBoard"</td>
+<td></td>
+<td>6</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate navigation bar order 5 th logout", "Verify DashBoard"</td>
+<td></td>
+<td>5</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text field is present # TC#9", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login with valid credentials # TC#19", "Verify login with bgd"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LMS title alignment", "Verify DashBoard"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate alignment for navigation bar", "Verify DashBoard"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text on the second text field # TC#12", "Verify given URL"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to land on home page with invalid URL # TC#2", "Verify given URL"</td>
+<td></td>
+<td>2</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar text", "Verify DashBoard"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alignment of the login button # TC#16", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify input descriptive test in Admin field # TC#17", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sign in content # TC#8", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify after login Admin lands on dashboard page", "Verify DashBoard"</td>
+<td></td>
+<td>14</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alignment input field for the login  # TC#14", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate LMS title has correct spelling and space", "Verify DashBoard"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify Login button is present # TC#15", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify company name # TC#7", "Verify given URL"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the company logo # TC#5", "Verify given URL"</td>
+<td></td>
+<td>5</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify application name # TC#6", "Verify given URL"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login with invalid credentials # TC#20", "Verify login with bgd"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to land on login page # TC#1", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 3rd batch", "Verify DashBoard"</td>
+<td></td>
+<td>6</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the text spelling in the page  # TC#4", "Verify given URL"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify login button action through mouse # TC#24", "Verify login with bgd"</td>
+<td></td>
+<td>5</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify asterik next to password text # TC#13", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify input descriptive test in password field # TC#18", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text on the first text field # TC#10", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LMS title", "Verify DashBoard"</td>
+<td></td>
+<td>8</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 4th class", "Verify DashBoard"</td>
+<td></td>
+<td>6</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the response time", "Verify DashBoard"</td>
+<td></td>
+<td>7</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify for broken link # TC#3", "Verify given URL"</td>
+<td></td>
+<td>3</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify broken link", "Verify DashBoard"</td>
+<td></td>
+<td>5</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+<tr>
+<td title='testRunner.testExecution.runScenario()'><b>runScenario</b><br>Test class: testRunner.testExecution<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify login button action through keyboard # TC#23", "Verify login with bgd"</td>
+<td></td>
+<td>4</td>
+<td>testRunner.testExecution@7b993c65</td></tr>
+</table><p>
+</body>
+</html>

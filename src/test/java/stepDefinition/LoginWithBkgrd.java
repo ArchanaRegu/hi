@@ -37,9 +37,17 @@ public class LoginWithBkgrd {
 	 }
 	 @Then("Error message please check Adminname\\/password")
 	 public void error_message_admin_pwd() {
-		String ExpectedMessage="Invalid username and password Please try again"; 
+		 
+		String ExpectedMessage="Invalid username and password Please try again";
+		try {
 		String Actualmsg=loginPage.error_message();
 		Assert.assertEquals(ExpectedMessage, Actualmsg);
+		
+		}catch (Exception e) {
+			System.out.println(e.getCause());
+			Assert.assertTrue(false);
+		}
+		
 	 }
 
 	@Then("Admin should land on dashboard page \\( centre of the page will be empty , menu bar is present).")
@@ -61,7 +69,8 @@ public class LoginWithBkgrd {
 		System.out.println(username+" "+password);
 		loginPage.Enter_username_password(username, password);
 		loginPage.clcik_login();
-	}
+	
+		}
 	@When("Admin enter valid credentials  and clicks login button through keyboard")
 	public void enterValidCredentialsUsingKeyboard() {
 		String username=excelnew.getCellData(1, 0);

@@ -1,6 +1,5 @@
 package stepDefinition;
 
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -15,6 +14,7 @@ import comPages.Loginpage;
 import comUtils.DriverFactory;
 import comUtils.ExcelReader;
 import io.cucumber.java.en.*;
+import net.sourceforge.tess4j.TesseractException;
 
 public class LoginStepDefination {
 	private Loginpage loginPage = new Loginpage(DriverFactory.getDriver());
@@ -39,7 +39,7 @@ public class LoginStepDefination {
 	}
 	@When("User enters username and password and clicks Login_btn.")
 	public void user_enters_username_and_password_and_clicks_login_btn() throws IOException {
-		String username=excelnew.getCellData(1, 0);;
+		String username=excelnew.getCellData(1, 0);
 		String password=excelnew.getCellData(1, 1);
 		loginPage.Enter_username_password(username, password);
 		loginPage.clcik_login();
@@ -49,7 +49,7 @@ public class LoginStepDefination {
 	public void admingives_the_invalid_lms_portal_url() throws MalformedURLException, IOException {
 		try {
 		DriverFactory.getDriver()
-		.get("https://lms-frontend-haathon-oct24-173fe394c05.hrouapp.com");
+		.get("https://lms-front678-haathon-oct24-173fe394c05.hrouapp.com");
 		}
 		catch (Exception e) {
 			e.getCause();
@@ -72,6 +72,7 @@ public class LoginStepDefination {
         // Get response code
         int r = response.statusCode();
         System.out.println("Http code: " + r);
+       // Assert.assertEquals(int1, r);
 		
 		}
 	@Then("Admin should see logo on the left  side")
@@ -87,15 +88,93 @@ public class LoginStepDefination {
 		Assert.assertEquals(loginPage.num_List_Text(),int1);
 	}
 	@Then("Admin should see  LMS - Learning Management System")
-	public void admin_should_see_lms_learning_management_system() {
-		System.out.println("should implement at the end");
+	public void admin_should_see_lms_learning_management_system() throws IOException, TesseractException {
+		String LMS_text=loginPage.image_to_text_converter();
+		System.out.println(loginPage.image_to_text_converter());
+		if(LMS_text.contains("LMS - Learning Management System")) {
+			Assert.assertTrue(true);
+		}
+		else {
+			Assert.assertTrue(false);
+		}
+       
 	}
+	@Then("Admin should see company name below the app name")
+	public void admin_should_see_company_name_below_the_app_name() throws IOException, TesseractException {
+		String numpyninja_text=loginPage.image_to_text_converter();
+		System.out.println(loginPage.image_to_text_converter());
+		if(numpyninja_text.contains("NumpyNinja")) {
+			Assert.assertTrue(true);
+		}
+		else {
+			Assert.assertTrue(false);
+			
+		}}
+		@Then("Admin should see field mandatory asterik symbol next to Admin text")
+		public void admin_should_see_field_mandatory_asterik_symbol_next_to_admin_text() throws IOException, TesseractException {
+		String astrsym_admin=loginPage.image_to_astrix_converter();
+		System.out.println(astrsym_admin);
+		if(astrsym_admin.contains("User*")) {
+			Assert.assertTrue(true);
+		}
+		else {
+			Assert.assertTrue(false);
+		}
+		}
+		
+		@Then("Admin should see correct spellings in all fields")
+		public void admin_should_see_correct_spellings_in_all_fields() throws IOException, TesseractException {
+			String LMSapp_text=loginPage.image_to_text_converter();
+			String LMSapp_User_pwd=loginPage.image_to_astrix_converter();
+			System.out.println(loginPage.image_to_text_converter());
+			if(LMSapp_text.contains("LMS - Learning Management System")) {
+				Assert.assertTrue(true);
+			}
+			else {
+				Assert.assertTrue(false);
+			}
+			if(LMSapp_text.contains("NumpyNinja")) {
+				Assert.assertTrue(true);			}
+			else {
+				Assert.assertTrue(false);
+			}
+			if(LMSapp_User_pwd.contains("User")) {
+			Assert.assertTrue(true);}
+			else {
+				Assert.assertTrue(false);
+			}
+			if(LMSapp_User_pwd.contains("Password")) {
+				Assert.assertTrue(true);}
+				else {
+					Assert.assertTrue(false);
+				}
+			
+		}
+//Inputfield alignment Testing
+		@Then("Admin should see input field on the centre of the page")
+		public void admin_should_see_input_field_on_the_centre_of_the_page() {
+			loginPage.align_inputfield();
+			Assert.assertTrue(loginPage.align_inputfield());
+		}
+
+		@Then("Admin should see * symbol next to password text")
+		public void admin_should_see_symbol_next_to_password_text() throws IOException, TesseractException {
+			String astrsym_admin=loginPage.image_to_astrix_converter();
+			System.out.println(astrsym_admin);
+			if(astrsym_admin.contains("Password *")) {
+				Assert.assertTrue(true);
+			}
+			else {
+				Assert.assertTrue(false);
+			}
+		}
+	
 	@Then("Admin should {string} in the first text field")
 	public void admin_should_in_the_first_text_field(String string) {
 		Assert.assertTrue(loginPage.dis_user());
 	}
 	@Then("Admin should {string} in the second text field")
-	public void password_display() {
+	public void password_display(String string) {
 		Assert.assertTrue(loginPage.dis_pwd());
 	}
 	@Then("Admin should see login button")

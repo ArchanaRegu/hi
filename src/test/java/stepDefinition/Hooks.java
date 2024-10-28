@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import comPages.Loginpage;
 import comUtils.DriverFactory;
+import comUtils.ExcelReader;
 import comUtils.configReader;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -23,38 +24,31 @@ public class Hooks {
 //	private DriverFactory driverFactory;
 	public WebDriver driver;
 	private Loginpage loginPage = new Loginpage(DriverFactory.getDriver());
-//	@After
-//	public void Teardown() {
-//		loginPage.teardown();
-//	}
-//	private configReader configReader;
-//	Properties prop;
-//	@Before(order = 0)
-//	public void getProperty() {
-//		configReader = new configReader();
-//		prop = configReader.init_prop();
-//	}
-//
-//	@Before(order = 1)
-//	public void launchBrowser() {
-//		String browserName = prop.getProperty("browser");
-//		driverFactory = new DriverFactory();
-//		driver = driverFactory.init_driver(browserName);
-//		
-//	}
-//	@After
-//	public void AfterScenario(Scenario scenario) throws IOException {
-//		if(scenario.isFailed()) {
-//			byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-//			Allure.addAttachment("Failed Screenshot",new ByteArrayInputStream(screenshot));
-//		}
-//		driver.quit();
-//	}
-//	@AfterStep
-//	public void AddScreenShot(Scenario scenario) throws IOException {
-//		if(scenario.isFailed()) {
-//			File sourcepath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//			byte[] fileContent=FileUtils.readFileToByteArray(sourcepath);
-//			scenario.attach(fileContent, "image/png", "image");
-//		}}
+	private ExcelReader excelnew=new ExcelReader();
+	    @Before("@runBeforeHook")
+	    public void setUp() {
+	    	loginPage.launchBrowser();
+	    	DriverFactory.getDriver()
+			.get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com");
+			String username=excelnew.getCellData(1, 0);
+			String password=excelnew.getCellData(1, 1);
+			loginPage.Enter_username_password(username, password);
+			loginPage.clcik_login();
+	    }
+	    @After
+		public void AfterScenario(Scenario scenario) throws IOException {
+			if(scenario.isFailed()) {
+				byte[] screenshot=((TakesScreenshot)DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
+				Allure.addAttachment("Failed Screenshot",new ByteArrayInputStream(screenshot));
+			}
+			DriverFactory.getDriver().quit();
+		}
+		@AfterStep
+		public void AddScreenShot(Scenario scenario) throws IOException {
+			if(scenario.isFailed()) {
+				File sourcepath=((TakesScreenshot)DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
+				byte[] fileContent=FileUtils.readFileToByteArray(sourcepath);
+				scenario.attach(fileContent, "image/png", "image");
+			}}
+   
 }
